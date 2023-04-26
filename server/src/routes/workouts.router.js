@@ -1,30 +1,18 @@
 const { Router } = require('express');
 
+const {
+	httpGetAllWorkouts,
+	httpGetSingleWorkout,
+	httpAddNewWorkout,
+	httpDeleteWorkout,
+} = require('./workouts.controller');
+
 const workoutsRouter = Router();
 
-workoutsRouter.get('/', (req, res) => {
-	return res.status(200).json({
-		resp: 'GET all workouts',
-	});
-});
-
-workoutsRouter.get('/:workoutId', (req, res) => {
-	return res.status(200).json({
-		resp: 'GET single workout',
-	});
-});
-
-workoutsRouter.post('/', (req, res) => {
-	return res.status(201).json({
-		resp: 'POST a new workout',
-	});
-});
-
-workoutsRouter.delete('/', (req, res) => {
-	return res.status(200).json({
-		resp: 'Workout deleted',
-	});
-});
+workoutsRouter.get('/', httpGetAllWorkouts);
+workoutsRouter.get('/:id', httpGetSingleWorkout);
+workoutsRouter.post('/', httpAddNewWorkout);
+workoutsRouter.delete('/:id', httpDeleteWorkout);
 
 workoutsRouter.patch('/', (req, res) => {
 	return res.status(200).json({

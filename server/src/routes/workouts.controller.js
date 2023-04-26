@@ -3,32 +3,53 @@ const {
 	getSingleWorkout,
 	addNewWorkout,
 	deleteWorkout,
+	updateWorkout,
 } = require('../models/workouts.model');
 
 async function httpGetAllWorkouts(req, res) {
-	return res.status(200).json(await getAllWorkouts());
+	try {
+		return res.status(200).json(await getAllWorkouts());
+	} catch (error) {
+		return res.status(404).json({ error: error.message });
+	}
 }
 
 async function httpGetSingleWorkout(req, res) {
 	const { id } = req.params;
 
-	return res.status(200).json(await getSingleWorkout(id));
+	try {
+		return res.status(200).json(await getSingleWorkout(id));
+	} catch (error) {
+		return res.status(404).json({ error: error.message });
+	}
 }
 
 async function httpAddNewWorkout(req, res) {
-	return res.status(201).json(await addNewWorkout(req.body));
+	try {
+		return res.status(201).json(await addNewWorkout(req.body));
+	} catch (error) {
+		return res.status(404).json({ error: error.message });
+	}
 }
 
 async function httpDeleteWorkout(req, res) {
 	const { id } = req.params;
 
-	console.log(`${id} from controller`);
-
-	return res.status(200).json(await deleteWorkout(id));
+	try {
+		return res.status(200).json(await deleteWorkout(id));
+	} catch (error) {
+		return res.status(404).json({ error: error.message });
+	}
 }
 
 async function httpUpdateWorkout(req, res) {
-	// update workout
+	const { id } = req.params;
+
+	try {
+		return res.status(200).json(await updateWorkout(id, req.body));
+	} catch (error) {
+		return res.status(404).json({ error: error.message });
+	}
 }
 
 module.exports = {

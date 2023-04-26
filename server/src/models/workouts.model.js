@@ -18,9 +18,14 @@ async function deleteWorkout(id) {
 	return await Workout.findByIdAndDelete(id);
 }
 
+async function updateWorkout(id, data) {
+	return await Workout.findByIdAndUpdate(id, data);
+}
+
 module.exports = {
 	getAllWorkouts,
 	getSingleWorkout,
 	addNewWorkout,
 	deleteWorkout,
+	updateWorkout,
 };

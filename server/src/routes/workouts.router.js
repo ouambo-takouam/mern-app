@@ -5,6 +5,7 @@ const {
 	httpGetSingleWorkout,
 	httpAddNewWorkout,
 	httpDeleteWorkout,
+	httpUpdateWorkout,
 } = require('./workouts.controller');
 
 const workoutsRouter = Router();
@@ -13,11 +14,6 @@ workoutsRouter.get('/', httpGetAllWorkouts);
 workoutsRouter.get('/:id', httpGetSingleWorkout);
 workoutsRouter.post('/', httpAddNewWorkout);
 workoutsRouter.delete('/:id', httpDeleteWorkout);
-
-workoutsRouter.patch('/', (req, res) => {
-	return res.status(200).json({
-		resp: 'Workout updated',
-	});
-});
+workoutsRouter.patch('/:id', httpUpdateWorkout);
 
 module.exports = workoutsRouter;

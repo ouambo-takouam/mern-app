@@ -3,10 +3,10 @@ import { createContext, useReducer } from 'react';
 export const WorkoutsContext = createContext([]);
 
 export function WorkoutsProvider({ children }) {
-	const [tasks, dispatch] = useReducer(workoutsReducer, initialWorkouts);
+	const [workouts, dispatch] = useReducer(workoutsReducer, initialWorkouts);
 
 	return (
-		<WorkoutsContext.Provider value={[tasks, dispatch]}>
+		<WorkoutsContext.Provider value={[workouts, dispatch]}>
 			{children}
 		</WorkoutsContext.Provider>
 	);

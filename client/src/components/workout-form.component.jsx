@@ -11,8 +11,7 @@ export default function WorkoutForm() {
 	const [fields, setFields] = useState(initialFields);
 	const { title, load, reps } = fields;
 
-	const data = useContext(WorkoutsContext);
-	console.log(data);
+	const [workouts, dispatch] = useContext(WorkoutsContext);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -25,7 +24,9 @@ export default function WorkoutForm() {
 			},
 		})
 			.then((response) => response.json())
-			.then((workout) => data.dispatch({ type: 'added', payload: workout }));
+			.then((workout) => dispatch({ type: 'added', payload: workout }));
+
+		setFields(initialFields);
 	};
 
 	const handleChange = (event) => {

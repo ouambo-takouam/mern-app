@@ -1,0 +1,58 @@
+h2 {
+	font-size: 16px;
+}
+
+p,
+label {
+	font-size: 14px;
+}
+
+.navbar,
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 800px;
+}
+
+.navbar {
+	height: 50px;
+}
+
+.content {
+	background-color: rgba(197, 197, 197, 0.135);
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.workout-list {
+	width: 400px;
+}
+
+.workout-item {
+	background-color: #fff;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.workout-item h2 {
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+
+.workout-item p {
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+
+.workout-form {
+	width: 200px;
+}

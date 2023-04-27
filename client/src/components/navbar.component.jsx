@@ -1,11 +1,7 @@
-function Navbar() {
+export default function Navbar() {
 	return (
-		<div className="navbar-container">
-			<div className="main">
-				<h1 className="navbar-title">Workout Buddy</h1>
-			</div>
+		<div className="navbar">
+			<div className="container">Navbar</div>
 		</div>
 	);
 }
-
-export default Navbar;

@@ -4,64 +4,12 @@
 
 body {
 	margin: 0;
-	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: rgb(29, 29, 29);
+	color: rgb(13, 13, 13);
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
-}
-
-.main {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-}
-
-.main-container {
-	background-color: rgba(128, 128, 128, 0.194);
-	height: 100vh;
-	padding-top: 50px;
-}
-
-/* navbar */
-.navbar-title {
-	font-weight: 100;
-}
-
-/* main content */
-.workout-list {
-	flex: 5;
-}
-
-/* workout item */
-.workout-item {
-	background-color: white;
-	padding: 15px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.workout-item h1 {
-	margin: 0;
-	font-size: 22px;
-	color: #1c2826;
-}
-
-.workout-item span {
-	font-weight: bold;
-	color: #1c2826;
-}
-
-.workout-item p {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.workout-form {
-	flex: 2;
 }

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { WorkoutsContext } from '../context/workouts.context';
 
 const initialFields = {
 	title: '',
@@ -9,6 +10,9 @@ const initialFields = {
 export default function WorkoutForm() {
 	const [fields, setFields] = useState(initialFields);
 	const { title, load, reps } = fields;
+
+	const data = useContext(WorkoutsContext);
+	console.log(data);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -21,7 +25,7 @@ export default function WorkoutForm() {
 			},
 		})
 			.then((response) => response.json())
-			.then((workout) => console.log(workout));
+			.then((workout) => data.dispatch({ type: 'added', payload: workout }));
 	};
 
 	const handleChange = (event) => {

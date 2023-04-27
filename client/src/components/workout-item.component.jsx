@@ -1,12 +1,14 @@
-export default function WorkoutItem() {
+export default function WorkoutItem({ workout }) {
+	const { title, load, reps } = workout;
+
 	return (
 		<div className="workout-item">
-			<h2>workout title</h2>
+			<h2>{title}</h2>
 			<p>
-				<span>Load (kg):</span> 20
+				<span>Load (kg):</span> {load}
 			</p>
 			<p>
-				<span>Reps:</span> 20
+				<span>Reps:</span> {reps}
 			</p>
 		</div>
 	);

@@ -9,6 +9,7 @@ const initialFields = {
 
 export default function WorkoutForm() {
 	const [fields, setFields] = useState(initialFields);
+
 	const { title, load, reps } = fields;
 
 	const [workouts, dispatch] = useContext(WorkoutsContext);
